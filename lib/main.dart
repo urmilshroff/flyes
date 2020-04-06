@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flyes/pages/home_page.dart';
 import 'package:flyes/utils/colors.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         accentColor: MyColors.accent,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: null,
+      home: MyHomePage(),
     );
   }
 }
