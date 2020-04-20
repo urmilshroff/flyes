@@ -1,9 +1,31 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flyes/utils/colors.dart';
 import 'package:flyes/utils/text_styles.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:neumorphic/neumorphic.dart';
 
 class MyHomePage extends StatelessWidget {
+  File image;
+
+  double imageHeight;
+  double imageWidth;
+
+  predictImage(File image) async {
+    await yoloV2Tiny(image);
+  }
+
+  pickImageFromGallery() async {
+    var image = await ImagePicker.pickImage(source: ImageSource.gallery);
+
+    if (image == null) {
+      return null;
+    } else {
+      predictImage(image);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
