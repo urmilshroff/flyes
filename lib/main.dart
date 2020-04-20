@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flyes/pages/home_page.dart';
 import 'package:flyes/utils/colors.dart';
+import 'package:neumorphic/neumorphic.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(NeumorphicApp());
 }
 
-class MyApp extends StatelessWidget {
+class NeumorphicApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flyes',
-      theme: ThemeData(
+    return NeuApp(
+      theme: NeuThemeData(
+        brightness: Brightness.light,
         primaryColor: MyColors.primary,
-        accentColor: MyColors.accent,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        curveType: CurveType.concave,
+        lightSource: LightSource.topLeft,
       ),
       home: MyHomePage(),
     );
